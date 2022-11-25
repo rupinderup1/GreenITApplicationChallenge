@@ -1,0 +1,5 @@
+<IfModule mod_rewrite.c>
+	RewriteEngine on
+	RewriteCond %{REQUEST_FILENAME} !-f
+	RewriteRule ^([^/]*)/?([^/]*)/?([^/]*)/?([^/]*)/?([^/]*)/?([^/]*)/?([^/]*)/?([^/]*)/?([^/]*)/?$ index.php?section=$1&action=$2&var1=$3&var2=$4&var3=$5&var4=$6&var5=$7&var6=$8&var7=$9& [L,NC,QSA]
+</IfModule>
