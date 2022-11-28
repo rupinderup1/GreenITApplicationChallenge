@@ -1,5 +1,7 @@
 <?php
 header('content-type: application/json');
+header('Access-Control-Allow-Origin: *');
+
 $response = array("success" => false, "message" => "Route not found");
 
 // Listing Users
@@ -23,7 +25,7 @@ if($_GET['section'] === 'users' && $_GET['action'] == '' && $_SERVER['REQUEST_ME
 		}
 		fclose($handle);
 	}
-	$response = array("success" => true, "message" => "Listing", "data" => $resData);
+	$response = array("success" => true, "message" => "Listing", "data" => $resData, "header" => $header);
 }
 
 // Add Users
