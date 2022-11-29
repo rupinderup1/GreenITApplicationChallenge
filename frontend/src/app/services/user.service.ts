@@ -19,7 +19,7 @@ export class UserService {
   }
 
   updateUser(user: User): Observable<User> {
-    return this.http.patch<User>(`${this.serviceUrl}/${user.id}`, user);
+    return this.http.put<User>(`${this.serviceUrl}/${user.id}`, user);
   }
 
   addUser(user: User): Observable<User> {

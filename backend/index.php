@@ -1,6 +1,7 @@
 <?php
 header('Access-Control-Allow-Origin: *');
 header('Access-Control-Allow-Methods: GET, POST, PATCH, OPTIONS, PUT, DELETE');
+header('Access-Control-Allow-Headers: x-requested-with, content-type');
 header('content-type: application/json');
 
 $response = array("success" => false, "message" => "Route not found");
