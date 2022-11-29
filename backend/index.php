@@ -1,6 +1,7 @@
 <?php
-header('content-type: application/json');
 header('Access-Control-Allow-Origin: *');
+header('Access-Control-Allow-Methods: GET, POST, PATCH, OPTIONS, PUT, DELETE');
+header('content-type: application/json');
 
 $response = array("success" => false, "message" => "Route not found");
 
@@ -25,7 +26,7 @@ if($_GET['section'] === 'users' && $_GET['action'] == '' && $_SERVER['REQUEST_ME
 		}
 		fclose($handle);
 	}
-	$response = array("success" => true, "message" => "Listing", "data" => $resData, "header" => $header);
+	$response = array("users" => $resData);
 }
 
 // Add Users
@@ -35,13 +36,13 @@ else if($_GET['section'] === 'users' && $_GET['action'] == 'add' && $_SERVER['RE
 }
 
 // Edit Users
-else if($_GET['section'] === 'users' && $_GET['action'] == 'edit' && $_SERVER['REQUEST_METHOD'] == 'PUT') {
+else if($_GET['section'] === 'users' && $_SERVER['REQUEST_METHOD'] == 'PUT') {
 
 	$response = array("success" => true, "message" => "Edit");
 }
 
 // Delete Users
-else if($_GET['section'] === 'users' && $_GET['action'] == 'delete' && $_SERVER['REQUEST_METHOD'] == 'DELTE') {
+else if($_GET['section'] === 'users' && $_SERVER['REQUEST_METHOD'] == 'DELETE') {
 
 	$response = array("success" => true, "message" => "Delete");
 }
