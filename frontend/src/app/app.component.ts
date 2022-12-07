@@ -15,6 +15,7 @@ export class AppComponent {
   columnsSchema: any = UserColumns;
   dataSource = new MatTableDataSource<User>();
   valid: any = {};
+  title = "hi";
 
   constructor(public dialog: MatDialog, private userService: UserService) {}
 
